@@ -38,6 +38,34 @@
     <section>
         <h2>Formulario de Registro</h2>
         <!-- Averiguar la propiedad action que me permite cargar archivos multimedia en mi formulario.-->
+        La propiedad action en un formulario HTML no permite cargar archivos multimedia directamente. Su función es definir la URL a la que se envía el formulario cuando se envían los datos. Para permitir la carga de archivos, se debe utilizar el elemento <input type="file"> y el atributo accept para especificar los tipos de archivos permitidos. 
+        Explicación detallada:
+        1. action atributo del formulario:
+        action especifica la dirección URL a la que se enviarán los datos del formulario cuando el usuario haga clic en el botón de envío. 
+        Por ejemplo, action="procesar_formulario.php" enviaría los datos a un script llamado "procesar_formulario.php" en el servidor. 
+        No tiene que ver con la carga de archivos directamente. 
+        2. Elemento <input type="file">:
+        Este elemento permite al usuario seleccionar archivos desde su computadora. 
+        Cuando se incluye en un formulario, se muestra un botón "Seleccionar archivo" o similar. 
+        Los archivos seleccionados se envían al servidor cuando el formulario se envía. 
+        3. Atributo accept:
+        accept se utiliza dentro del elemento <input type="file"> para especificar los tipos de archivos que el navegador permitirá al usuario seleccionar. 
+        Por ejemplo, accept="image/*,application/pdf" permitiría imágenes de cualquier tipo y archivos PDF. 
+        El valor de accept puede ser una lista de tipos MIME, extensiones de archivo o una combinación de ambos. 
+        Ejemplo:
+        Código
+        
+        <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+          <label for="archivo">Seleccionar archivo:</label>
+          <input type="file" id="archivo" name="archivo" accept="image/*">
+          <button type="submit">Enviar</button>
+        </form>
+        En este ejemplo:
+        El formulario se enviará a "procesar\_formulario.php". 
+        El usuario puede seleccionar archivos de imagen (cualquier tipo de imagen). 
+        El atributo enctype="multipart/form-data" es esencial para poder enviar archivos con el método POST. 
+        En resumen:
+        La propiedad action define el destino del formulario, mientras que el elemento <input type="file"> y el atributo accept controlan la selección de archivos. Se debe utilizar ambos para permitir la carga de archivos en un formulario HTML. 
         
         
         
